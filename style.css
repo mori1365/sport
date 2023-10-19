@@ -1,137 +1,193 @@
-@import url('https://v1.fontapi.ir/css/Vazirmatn:200;600');
-@import url('https://v1.fontapi.ir/css/IranNastaliq');
-
-* {
+@import url('https://v1.fontapi.ir/css/Vazir:400;700;900');
+*{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-
-:root {
-    --color: #e74c3c;
-    --background-color: #34495e;
+header{
+padding: 10px 3%;
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+overflow: hidden;
+z-index: 1001;
+width: 100%;
 }
-
-body {
-    background-color: var(--background-color);
+.logo{
+    width: 85px;
 }
-
-header {
+.logo> img{
+    width: 100%;
+    transition: all .6s ease-in-out;
+    cursor: pointer;
+}
+.logo >img:hover{
+    scale: .85;
+}
+.navbar{
     display: flex;
+}
+.navbar li{
+    list-style: none;
+    position: relative;
+}
+.navbar >li >a{
+    text-decoration: none;
+    padding: 10px;
+    font-family: Vazir;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #59096d;
+    display: block;
+    transition: all 0.6s ease-in-out;
+    border-radius: 8px;
+}
+.navbar >li >a:hover{
+    background-color: #59096d;
+    color: #ffffff;
+}
+#menu, .close{
+    color: #59096d;
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: none;
+}
+.slide{
+    
+    width: 80%;
+    height: 800px;
+    animation: tosi 20s infinite linear;
+    margin: 10% auto;
+    border: 3px solid #59096d;
+    background-size: cover;
+    box-shadow:
+  2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+  6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+  12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+  22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+  41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
+  100px 100px 80px rgba(0, 0, 0, 0.07)
+;
+z-index: -100;
+}
+@keyframes tosi{
+    0%{background-image: url(./IMAGE/[fpdl.in]_football-scene-with-competing-soccer-players-stadium_207634-7273_full.jpg);}
+    25%{background-image: url(./IMAGE/[fpdl.in]_soccer-player-stadium-action-mixed-media_641298-22394_full.jpg);}
+    50%{background-image: url(./IMAGE/[fpdl.in]_soccer-players-action-professional-stadium_654080-1223_full.jpg);}
+    75%{background-image: url(./IMAGE/[fpdl.in]_soccer-players-action-professional-stadium_654080-1261_full.jpg);}
+    100%{background-image: url(./IMAGE/20230913080616_[fpdl.in]_minimal-soccer-theme-photoshoot-with-creative-sports-concept-stylish-football-concept-photography_950002-5684_full.jpg);}
+}
+.container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 5%;
+    align-items: center;
+    justify-content: space-around;
+}
+.container .image{
+    border-radius: 81% 37% 41% 37% / 39% 31% 49% 40% ;
+    width: 500px;
+    height: 500px;
+    background-color: #59096d;
+    position: relative;
+}
+.image >img{
+    width: 100%;
+}
+.container .txt{
+    color: #59096d;
+    line-height: 60px;
+    font-size: 3rem;
+    font-family: vazir;
+    font-weight: 900;
+    text-align: center;
+    align-items: center;
+    
+}
+.txt >button{
+    background-color: #59096d;
+    color: #ffffff;
+    width: 150px;
+    height: 50px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    border: 1.5px solid #fff;
+    display: inline-flex;
     position: relative;
     align-items: center;
-    justify-content: space-between;
-    padding: 10px 3%;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1;
+    box-shadow:
+  11.1px 11.1px 2.2px rgba(0, 0, 0, 0.028),
+  20.7px 20.7px 5.3px rgba(0, 0, 0, 0.038),
+  29.4px 29.4px 10px rgba(0, 0, 0, 0.041),
+  38.6px 38.6px 17.9px rgba(0, 0, 0, 0.044),
+  53.1px 53.1px 33.4px rgba(0, 0, 0, 0.053),
+  100px 100px 80px rgba(0, 0, 0, 0.07);
+  transition: all .6s ease-in-out;
+  overflow: hidden;
+  border-radius: 7px;
 }
-
-.logo {
-    width: 80px;
+.txt >button:hover{
+    color: #59096d;
 }
-
-.logo>img {
+.txt >button::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+    width: 0;
+    height: 100%;
+    z-index: -1;
+    transition: all 0.6s;
+    border: 1.5px solid #59096d;
+}
+.txt >button:hover::before{
     width: 100%;
 }
 
-.anim {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
 
-.anim>li {
-    list-style: none;
-    font-family: arial;
-    font-size: 3em;
-    letter-spacing: 15px;
-    text-shadow: none;
-    animation: animate 1s infinite linear;
-}
 
-@keyframes animate {
-    0% {
-        color: #484848;
-        text-shadow: none;
+
+
+@media (max-width:568px){
+    #menu{
+        display: block;
     }
-
-    18% {
-        color: #484848;
-        text-shadow: none;
+    .navbar{
+        position: absolute;
+        display: block;
+        top: -40%;
+        right: 0;
+        transition: all .6s;
+        background-color: #59096d;
+        text-align: center;
+        width: 100%;
+        z-index: 10000;
+        height: 300px;
     }
-    20%{
-        color:#fff900 ;
-        text-shadow: 0 0 7px #fff900,
-        0 0 20px #ff6c00;}
-        30%{
-            color: #484848;
-            text-shadow: none;
-        }
-        35%{
-            color:#fff900 ;
-        text-shadow: 0 0 7px #fff900,
-        0 0 20px #ff6c00;}
-        70%{
-            color: #484848;
-            text-shadow: none;
-        }
-        85%{
-            color:#fff900 ;
-        text-shadow: 0 0 7px #fff900,
-        0 0 20px #ff6c00;}
-        90%{
-            color: #484848;
-            text-shadow: none;
-        }
-        100%{
-            color: #484848;
-            text-shadow: none;
-        }
+    .navbar >li >a{
+        color: #ffffff;
+        z-index: 1000;
+        display: block;
     }
-    .anim >li:nth-child(1){
-        animation-delay: .2s;
+    .navbar >li >a:hover{
+        color: #59096d;
+        background-color: #ffffff;
     }
-    .anim >li:nth-child(2){
-        animation-delay: .4s;
+    .slide{
+        width: 100%;
+        height:300px;
+        z-index: -1;
     }
-    .anim >li:nth-child(3){
-        animation-delay: .6s;
+    .container{
+        width: 90%;
+        margin: 0 auto;
     }
-    .anim >li:nth-child(4){
-        animation-delay: .8s;
+    .txt >button{
+        width: 100%;
     }
-    .anim >li:nth-child(5){
-        animation-delay: 1s;
-    }
-
-
-
-.navbar {
-    font-family: vazirmatn;
-    font-weight: 600;
-    display: flex;
-    direction: rtl;
-}
-
-.navbar li {
-    list-style: none;
-    position: relative;
-}
-
-.navbar li a {
-    text-decoration: none;
-    color: var(--color);
-    padding: 10px;
-    line-height: 50px;
-    font-size: 1.2rem;
-}
-
-#menu,
-.close {
-    font-size: 1.2rem;
-    cursor: pointer;
-    display: none;
-    color: var(--color);
 }
