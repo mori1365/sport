@@ -16,3 +16,4 @@ window.onscroll = () =>{
     navbar.style.top = "-100%";
     clos.style.display = "none";
 }
+
