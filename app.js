@@ -17,21 +17,18 @@ window.onscroll = () =>{
     clos.style.display = "none";
 }
 
-var accordions = document.getElementsByClassName("accordion");
+var acc =document.getElementsByClassName("accordion");
 var i;
-
-for (i = 0; i < accordions.length; i++) {
-    accordions[i].addEventListener("click", function() {
-      this.classList.toggle("active");
-      var panel = this.nextElementSibling;
-      var panelContent = panel.querySelector(".panelbox");
-      if (panel.style.maxHeight) {
-        panel.style.maxHeight = null;
-        panelContent.style.opacity = "0";
-      } else {
-        panel.style.maxHeight = panel.scrollHeight + "px";
-        panelContent.style.opacity = "1";
-      }
-    });
-  }
+for(i=0;i<acc.length;i++) {
+  acc[i].addEventListener("click", function(){
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if(panel.style.maxHeight){
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    }
+  });
+ 
+}
     
